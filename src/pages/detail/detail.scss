@@ -26,6 +26,10 @@
         height: 100px;
         background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
     }
+    @media screen and (min-width: 2000px) {
+        //For 4K Displays (Ultra HD)
+            background-position-y: center;
+        }
 }
 
 .movie-content {
@@ -122,7 +126,7 @@
     height: 0;
 
     @include mobile {
-        width: 100%;
+       
     }
     &__title {
         margin-bottom: 1.5rem;

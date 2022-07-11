@@ -6,10 +6,31 @@
 
         @include tablet {
             width: 30%;
+            margin-left: 1rem;
         }
 
         @include mobile {
             width: 40%;
+            margin-left: 1rem;
         }
+        
+    }
+}
+.section__header.mb-2{
+    @include mobile {
+        
+        margin-left: 1rem;
+    }
+    & h2{
+        @include mobile {
+        
+            margin-bottom: 1rem;
+        }
+    }
+}
+.btn.btn-outline.small{
+    @include mobile {
+        
+        margin-bottom: 1rem;
     }
 }

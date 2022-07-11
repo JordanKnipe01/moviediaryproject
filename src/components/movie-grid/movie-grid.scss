@@ -5,7 +5,8 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     margin-bottom: 3rem;
-
+    margin-left: 1rem;
+    margin-right: 1rem;
     @include tablet {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         
@@ -21,26 +22,27 @@
     width: 100%;
     max-width: 500px;
     margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     input {
         width: 100%;
         padding-right: 8rem;
         @include mobile{
             height: 4rem;
+            
         }
     }
 
     button {
         position: absolute;
         right: 0;
-        top: 2px;
+        margin-right: 1rem;
 
         @include mobile {
             right: 1px;
             top: 1px;
             height: 4rem;
+            
         }
     }
-}
-.container{
-    margin: 1rem;
 }
