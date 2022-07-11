@@ -21,8 +21,16 @@
         
         margin-left: 1rem;
     }
+    @include tablet {
+        
+        margin-left: 1rem;
+    }
     & h2{
         @include mobile {
+        
+            margin-bottom: 1rem;
+        }
+        @include tablet {
         
             margin-bottom: 1rem;
         }
@@ -30,6 +38,10 @@
 }
 .btn.btn-outline.small{
     @include mobile {
+        
+        margin-bottom: 1rem;
+    }
+    @include tablet {
         
         margin-bottom: 1rem;
     }
