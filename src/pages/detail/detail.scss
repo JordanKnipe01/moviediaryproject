@@ -73,8 +73,10 @@
         }
 
         .genres {
+
             & > * ~ * {
                 margin-left: 0.5rem;
+                
             }
 
             &__item {
@@ -84,6 +86,10 @@
                 font-size: 0.8rem;
                 font-weight: 600;
                 background-color: $body-bg;
+
+                
+                display: inline-block;
+                margin: 0.2rem 0.2rem;
             }
         }
     }
@@ -109,8 +115,24 @@
 
 .video {
     margin-bottom: 3rem;
+    
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
 
+    @include mobile {
+        width: 100%;
+    }
     &__title {
         margin-bottom: 1.5rem;
+    }
+
+    & iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
