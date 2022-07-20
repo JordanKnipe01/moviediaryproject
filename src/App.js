@@ -8,18 +8,23 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
 import Routes from './config/Routes';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Route render={props => (
-                <>
-                    <Header {...props}/>
-                    <Routes/>
-                    <Footer/>
-                </>
-            )}/>
-        </BrowserRouter>
+        
+            <BrowserRouter>
+            <AuthProvider>
+                <Route render={props => (
+                    <>
+                        <Header {...props}/>
+                        <Routes/>
+                        <Footer/>
+                    </>
+                )}/>
+            </AuthProvider>
+            </BrowserRouter>
+        
     );
 }
 
