@@ -9,7 +9,7 @@ import Footer from './components/footer/Footer';
 
 import Routes from './config/Routes';
 import { AuthProvider } from './contexts/AuthContext';
-
+import PrivateRoute from './config/PrivateRoute';
 function App() {
     return (
         

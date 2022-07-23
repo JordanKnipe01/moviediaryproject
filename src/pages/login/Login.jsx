@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import './login.scss';
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import {useAuth} from '../../contexts/AuthContext'
 const Login = () => {
@@ -8,10 +8,10 @@ const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
 
-  const { signup, currentUser } = useAuth()
+  const { login, currentUser } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  //const history = useHistory()
+  const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -21,10 +21,10 @@ const Login = () => {
     try {
       setError("")
       setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
-      //history.push("/")
+      await login(emailRef.current.value, passwordRef.current.value)
+      history.push("/Dashboard")
     } catch {
-      setError("Failed to create an account")
+      setError("Failed to Login")
     }
 
     setLoading(false)
@@ -35,26 +35,24 @@ const Login = () => {
         
         <div id="login">   
           <h1>Welcome Back!</h1>
-          
-          {error && <div> {error} </div>}
-          {currentUser.email}
+          {error}
           <form onSubmit={handleSubmit}>
           
             <div className="field-wrap">
             <label>
               
             </label>
-            <input type="email"placeholder='Email Address'ref={emailRef}required autocomplete="off"/>
+            <input type="email"placeholder='Email Address'ref={emailRef}required autoComplete="off"/>
           </div>
           
           <div className="field-wrap">
             <label>
               
             </label>
-            <input type="password"placeholder='Password'ref={passwordRef}required autocomplete="off"/>
+            <input type="password"placeholder='Password'ref={passwordRef}required autoComplete="off"/>
           </div>
-          
-          <p className="forgot"><a href="#">Forgot Password?</a></p>
+          <p className="signupAccount"><Link to="/signup">Signup</Link></p>
+          <p className="forgot"><Link to="/forgot-password">Forgot Password?</Link></p>
           
           <button className="button button-block">Log In</button>
           
