@@ -5,6 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import './header.scss';
 
 import logo from '../../assets/templogo.png';
+import { auth } from '../../firebase/firebase';
+import { useAuth } from '../../contexts/AuthContext';
 
 const headerNav = [
     {
@@ -20,18 +22,43 @@ const headerNav = [
         path: '/tv'
     },
     {
-        display: 'Signup',
-        path: '/signup'
+        display: 'Login', 
+        path: '/login'
     }
 ];
 
+const headerLoggedInNav = [
+    {
+        display: 'Home',
+        path: '/'
+    },
+    {
+        display: 'Movies',
+        path: '/movie'
+    },
+    {
+        display: 'TV Series',
+        path: '/tv'
+    },
+    {
+        display: 'Account',
+        path: '/dashboard'
+    }
+];
 const Header = () => {
+  
 
+
+
+
+    const {currentUser} = useAuth();
     const { pathname } = useLocation();
     const headerRef = useRef(null);
-
+    
     const active = headerNav.findIndex(e => e.path === pathname);
 
+    
+     
     useEffect(() => {
         const shrinkHeader = () => {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -53,13 +80,26 @@ const Header = () => {
                     <img src={logo} alt="" />
                     <Link to="/">MovieDairy</Link>
                 </div>
+                <div>
+                The user is <b>{currentUser ? 'currently' : 'not'}</b> logged in.
+	</div>
                 <ul className="header__nav">
-                    {
+                    {currentUser ?
+                        headerLoggedInNav.map((e, i) => (
+                            <li key={i} className={`${i === active ? 'active' : ''}`}>
+                                <Link to={e.path}>
+                                    {e.display}
+                                </Link>
+                                
+                            </li>
+                        )): 
+
                         headerNav.map((e, i) => (
                             <li key={i} className={`${i === active ? 'active' : ''}`}>
                                 <Link to={e.path}>
                                     {e.display}
                                 </Link>
+                                
                             </li>
                         ))
                     }
