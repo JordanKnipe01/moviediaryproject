@@ -24,6 +24,7 @@ export default function Dashboard() {
 <div className="form">
     <div className='t'>Profile</div>
     <strong>Email:</strong> {currentUser.email}
+    
     <br/>
     <Link to="/update-profile" className='button-primary'>Update Profile</Link>
     <br>
