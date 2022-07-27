@@ -1,4 +1,40 @@
 @use "../../scss/" as *;
+.swiper-slide{
+    .overlay_add{
+        z-index: 99;
+        position: absolute;
+        left: 51.5%;
+        top: -2%;
+        height:16%;
+        width: 45%;
+        filter: opacity(70%);
+        background-color: transparent;
+        
+    
+        &:hover  {
+            filter: opacity(100%);
+        }
+    }
+}
+.overlay_add{
+    z-index: 99;
+    position: relative;
+    left: 50%;
+    top: 12.5%;
+    filter: opacity(70%);
+        background-color: transparent;
+        
+    
+        &:hover  {
+            filter: opacity(100%);
+        }
+    width: 48%;
+    height: 13%;
+
+    &:hover  {
+        filter: opacity(100%);
+    }
+}
 
 .movie-card {
     position: relative;
@@ -38,5 +74,6 @@
         &:hover .btn {
             transform: translate(-50%, -50%) scale(1);
         }
+        
     }
 }
