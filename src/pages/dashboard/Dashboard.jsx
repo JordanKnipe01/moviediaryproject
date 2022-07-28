@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './dashboard.scss';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-
+import MovieGrid from '../../components/movie-grid/MovieGrid';
 export default function Dashboard() {
     const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
@@ -30,6 +30,14 @@ export default function Dashboard() {
     <br>
     </br>
     <button variant="link" onClick={handleLogout} className="button button-block">Log Out</button>
+    </div>
+
+    <div>
+    <div className="container">
+                <div className="section mb-3">
+
+                </div>
+            </div>
     </div>
     </>
   )
