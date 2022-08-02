@@ -3,12 +3,12 @@
 .logo {
     font-size: 2.5rem;
     font-weight: 600;
-
+    
     @include flex(center, unset);
 
     img {
         margin-right: 10px;
-        width: 50px;
+        width: 60px;
 
         @include mobile {
             width: 30px;

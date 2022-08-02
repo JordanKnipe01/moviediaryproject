@@ -31,8 +31,9 @@ const ForgotPassword = () => {
     }
     return (
       <>
+      
       <div className="form">
-          
+      <div className='container_before_form'>
           <div id="login">   
             <h1>Password Reset</h1>
             {error}
@@ -57,9 +58,11 @@ const ForgotPassword = () => {
             </form>
 
           </div>
-
+          <p className='need_account'>Need an account?<p className="signupAccount"><Link to="/signup">Signup</Link></p></p>
         </div>
-        Need an account?<p className="signupAccount"><Link to="/signup">Signup</Link></p>
+        </div>
+        
+       
       </>
     )
   }

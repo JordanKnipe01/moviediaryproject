@@ -22,14 +22,20 @@ export default function Dashboard() {
     return (
     <>
 <div className="form">
-    <div className='t'>Profile</div>
-    <strong>Email:</strong> {currentUser.email}
-    
-    <br/>
-    <Link to="/update-profile" className='button-primary'>Update Profile</Link>
+    <h1>Profile</h1>
+    <div className='profile_title'></div>
+    <p className='email_result'><strong className='email_title'>Email:</strong> {currentUser.email}</p>
     <br>
     </br>
-    <button variant="link" onClick={handleLogout} className="button button-block">Log Out</button>
+    <p className='first_name'><strong className='fn_title'>First Name:</strong> </p>
+    <br/>
+   
+    <br>
+    </br>
+    <div className='button_box'>
+      <Link to="/update-profile" className='button-primary'><h2>Update Profile</h2></Link>
+      <button variant="link" onClick={handleLogout} className="button button-block">Log Out</button>
+    </div>
     </div>
 
     <div>

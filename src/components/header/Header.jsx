@@ -78,10 +78,10 @@ const Header = () => {
             <div className="header__wrap container">
                 <div className="logo">
                     <img src={logo} alt="" />
-                    <Link to="/">MovieDairy</Link>
+                    <Link to="/">MovieDiary</Link>
                 </div>
                 <div>
-                The user is <b>{currentUser ? 'currently' : 'not'}</b> logged in.
+                <b>{currentUser ? `${currentUser.email}` : 'not'}</b> logged in.
 	</div>
                 <ul className="header__nav">
                     {currentUser ?
